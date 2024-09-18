@@ -1,0 +1,189 @@
+/*Font Family*/
+
+.arimo-custom {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; 
+    font-style: normal;
+  }
+  
+
+/*Login*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #19255b;
+}
+
+header .logo img {
+    width: 80px; 
+    height: auto;
+}
+
+#dark-mode-toggle {
+    margin-left: auto;  
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#dark-mode-toggle img {
+    width: 40px;  
+    height: 40px; 
+}
+
+
+
+   body{
+    background: #ffffff;
+   }
+
+.form-register {
+    width: 360px;
+    height: 420px;
+    background: #ffffff;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 25px;
+   /* border: 3.5px solid #19255b;*/
+    border: 3.5px solid #fcbf00;
+    font-family: 'Arimo';
+    color: #19255b;
+    /*box-shadow: 7px 13px 37px #ffeebd;*/
+    box-shadow: 7px 13px 37px #fff6dc;
+
+}
+
+.form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center
+}
+
+.controls {
+    width: 100%;
+    background: #fcbf00;
+    /*background: #ffffff;*/
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 16px;
+    border: 3px solid #dfa800;
+    /*border: 3px solid #19255b;*/
+    font-family: 'Arimo';
+    font-size: 18px;
+    color: #000000;
+}
+
+
+.form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;  
+    
+}
+
+.form-register a{
+    color: #2a3e97;
+    
+}
+
+.form-register a:hover{
+    color: #19255b;
+    text-decoration: underline;
+}
+
+.form-register .botons{
+    width: 100%;
+    background: #44c84d;
+    border: #27712c;
+    border-radius: 15px;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+
+}
+
+.botons-link {
+    width: 100%;
+    background: #fcbf00;
+    /*background: #ffffff;*/
+     border: 3px solid #dfa800;
+     /*border: 3px solid #19255b;*/
+    border-radius: 15px;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 12px;
+    text-align: center;
+    display: flex;         
+    align-items: center;   
+    justify-content: center; 
+}
+
+.botons-link a {
+    color: #19255b;
+    text-decoration: none;  
+    display: center; 
+    height: 19px;          
+    line-height: 1  ;      
+}
+
+.botons-link a:hover {
+    text-decoration: underline;
+}
+
+/* Modo oscuro (activado por la clase 'dark-mode') */
+body.dark-mode {
+    background: #19255b;
+    color: #000000;
+}
+
+body.dark-mode header {
+    background-color: #19255b;
+}
+
+body.dark-mode .form-register {
+    background: #ffffff;
+    border: 3.5px solid #19255b;
+    color: #19255b;
+    box-shadow: 7px 13px 37px #000000;
+}
+
+body.dark-mode .controls {
+    background: #ffcc00;
+    color: #000000;
+    border: 3px solid #b38f00;
+}
+
+body.dark-mode .form-register a {
+    color: #80bfff;
+}
+
+body.dark-mode .form-register a:hover {
+    color: #ccddff;
+}
+
+body.dark-mode .botons {
+    background: #339933;
+    border: #1f6626;
+}
+
+body.dark-mode .botons-link {
+    background: #ffcc00;
+    border: 3px solid #b38f00;
+}
+
+body.dark-mode .botons-link a {
+    color: #0d1b40;
+}
