@@ -1,0 +1,192 @@
+.arimo-custom {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; 
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #19255b;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+#UserMenu {
+    background: none;
+    border: none;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+.logo-container img {
+    width: 200px;
+    height: auto;
+}
+
+.botones-derecha {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+#Noti:hover {
+    transform: scale(1.1);
+}
+
+#User:hover {
+    transform: scale(1.1); 
+}
+
+#UserMenu:hover {
+    transform: scale(1.1);  
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button img {
+    width: 60px;
+    height: auto;
+}
+
+.RegistroDatos {
+    width: 600px;
+    height: 700px;
+    background: #ffffff;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    font-family: 'Arimo';
+}
+
+.RegistroDatos h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 31px;
+    text-align: center;
+}
+
+.RegistroDatos h3 {
+    font-weight: lighter;
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.controls {
+    background: #f2f2f2f2;
+    border: 0.5px solid #fcbf00;
+    width: 480px;
+    height: 46px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.Guardar {
+    background: #fcbf00;
+    width: 280px;
+    height: 60px;
+    text-align: center;
+    border-radius: 80px;
+    margin-top: 40px;
+    margin-left: 130px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.Guardar a {
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.Guardar:hover {
+    transform: scale(1.1);  
+}
+
+.user-dropdown {
+    position: relative;
+}
+
+.user-desplegable {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 8px;
+}
+
+.user-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #dcdcdc;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-header img {
+    width: 50px;
+    height: auto;
+}
+
+.user-header span {
+    font-family: 'Arimo';
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user-item {
+    padding: 20px;
+    text-align: left;
+    font-family: 'Arimo';
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-item a {
+    text-decoration: none;
+    color: #19255b;
+}
+
+.user-item:last-child {
+    border-bottom: none;
+}
+
+.user-item:hover {
+    background-color: #e5e5e5;
+}
