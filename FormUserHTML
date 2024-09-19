@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Usuario</title>
+    <link rel="shortcut icon" href="img/colmenacr_logo-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="stylesdatos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a href=""><button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button></a>
+            
+            <div class="logo-container">
+                <a href=""><img src="img/LogoHorizontal-SA blanco.png" alt="Logo"></a>
+            </div>
+            
+            <div class="botones-derecha">
+                <a href=""><button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button></a>
+                <div class="user-dropdown">
+                    <button id="User"><img src="img/botonuser.png" alt="Usuario"></button>
+                    <div id="userDesplegable" class="user-desplegable">
+                        <div class="user-header">
+                            <img src="img/botonuser.png" alt="Icono Usuario">
+                            <span>Nombre de Usuario</span>
+                        </div>
+                        <div class="user-item">
+                            <a href="indexdatos.html">Datos del Usuario</a>
+                        </div>
+                        <div class="user-item">
+                            <a href="indexlogin.html">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="RegistroDatos">
+        <h1>Formulario de Datos del Usuario</h1>
+        <h3>Nombre del Usuario</h3>
+        <input class="controls" type="text" name="nombre" id="nombre" placeholder="">
+        <h3>Correo Electrónico</h3>
+        <input class="controls" type="text" name="correo" id="correo" placeholder="">
+        <h3>Número de teléfono</h3>
+        <input class="controls" type="text" name="telefono" id="telefono" placeholder="">
+        <h3>Nombre de la Organización</h3>
+        <input class="controls" type="text" name="nombreorg" id="nombreorg" placeholder="">
+        <p class="Guardar"><a href="#">Guardar Cambios</a></p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userButton = document.getElementById('User');
+            const user = document.getElementById('userDesplegable');
+            
+            userButton.addEventListener('click', function() {
+                user.style.display = user.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!userButton.contains(event.target) && !user.contains(event.target)) {
+                    user.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
