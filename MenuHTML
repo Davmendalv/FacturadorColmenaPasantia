@@ -12,14 +12,26 @@
 <body>
     <header>
         <nav class="header-nav">
-            <a href=""><button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button></a>
+            <div class="menu-dropdown">
+                <button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button>
+                <div id="menuDesplegable" class="menu-desplegable">
+                    <div class="menu-header">
+                        <img src="img/botónmenu.png" alt="Icono Menu">
+                        <span>Menú</span>
+                    </div>
+                    <div class="menu-item">
+                        <a href="indexmenu.html">Lista de Facturas Electronicas</a>
+                    </div>
+                </div>
+            </div>
             
             <div class="logo-container">
-                <a href=""><img src="img/LogoHorizontal-SA blanco.png" alt="Logo"></a>
+                <img src="img/LogoHorizontal-SA blanco.png" alt="Logo">
             </div>
             
             <div class="botones-derecha">
-                <a href=""><button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button></a>
+                <button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button>  
+                
                 <div class="user-dropdown">
                     <button id="User"><img src="img/botonuser.png" alt="Usuario"></button>
                     <div id="userDesplegable" class="user-desplegable">
@@ -28,7 +40,7 @@
                             <span>Nombre de Usuario</span>
                         </div>
                         <div class="user-item">
-                            <a href="indexdatos.html">Datos del Usuario</a>
+                            <a id="DatosUser" href="indexdatos.html">Datos del Usuario</a>
                         </div>
                         <div class="user-item">
                             <a href="indexlogin.html">Cerrar sesión</a>
@@ -41,8 +53,22 @@
     
     <section class="Indice">
         <h1>Lista de Facturas</h1>
-        <button id="Crear">Crear</button>
+
+        <div class="crear-form">
+            <button id="Crear">Crear</button>
+            <div id="crearForm" class="form-register crear-desplegable">
+                <h4>Creando Factura</h4>
+                <h3>Numero de Factura:</h3>
+                <input class="controls" type="text" name="numfactform" id="numfactform" placeholder="Ingrese el Número de Factura">
+                <h3>Fecha:</h3>
+                <input class="controls" type="date" name="fechafactform" id="fechafactform">
+                <h3>Total</h3>
+                <input class="controls" type="text" name="totalfactform" id="totalfactform" placeholder="Ingrese el Total">
+                <p class="botons-link"><a href="#">Crear</a></p>
+            </div>
+        </div>
     </section>
+
     <section class="Facturas">
         <div class="NombreDatos">
             <h4>Número de Factura</h4>
@@ -58,6 +84,7 @@
         </div>
     </section>
 
+    <!--Script User Desplegable-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const userButton = document.getElementById('User');
@@ -74,5 +101,184 @@
             });
         });
     </script>
+
+    <!--Script Menú Desplegable-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('Menu');
+            const menu = document.getElementById('menuDesplegable');
+        
+            menuButton.addEventListener('click', function() {
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+             });
+
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!--Script Crear Formulario-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const crearButton = document.getElementById('Crear');
+            const crearForm = document.getElementById('crearForm');
+
+            crearButton.addEventListener('click', function() {
+                crearForm.style.display = crearForm.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!crearButton.contains(event.target) && !crearForm.contains(event.target)) {
+                    crearForm.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturadora Colmena Technologies</title>
+    <link rel="stylesheet" href="stylesmenu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <div class="menu-dropdown">
+                <button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button>
+                <div id="menuDesplegable" class="menu-desplegable">
+                    <div class="menu-header">
+                        <img src="img/botónmenu.png" alt="Icono Menu">
+                        <span>Menú</span>
+                    </div>
+                    <div class="menu-item">
+                        <a href="indexmenu.html">Lista de Facturas Electronicas</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="logo-container">
+                <img src="img/LogoHorizontal-SA blanco.png" alt="Logo">
+            </div>
+            
+            <div class="botones-derecha">
+                <button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button>  
+                
+                <div class="user-dropdown">
+                    <button id="User"><img src="img/botonuser.png" alt="Usuario"></button>
+                    <div id="userDesplegable" class="user-desplegable">
+                        <div class="user-header">
+                            <img src="img/botonuser.png" alt="Icono Usuario">
+                            <span>Nombre de Usuario</span>
+                        </div>
+                        <div class="user-item">
+                            <a id="DatosUser" href="indexdatos.html">Datos del Usuario</a>
+                        </div>
+                        <div class="user-item">
+                            <a href="indexlogin.html">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="Indice">
+        <h1>Lista de Facturas</h1>
+
+        <div class="crear-form">
+            <button id="Crear">Crear</button>
+            <div id="crearForm" class="form-register crear-desplegable">
+                <h4>Creando Factura</h4>
+                <h3>Numero de Factura:</h3>
+                <input class="controls" type="text" name="numfactform" id="numfactform" placeholder="Ingrese el Número de Factura">
+                <h3>Fecha:</h3>
+                <input class="controls" type="date" name="fechafactform" id="fechafactform">
+                <h3>Total</h3>
+                <input class="controls" type="text" name="totalfactform" id="totalfactform" placeholder="Ingrese el Total">
+                <p class="botons-link"><a href="#">Crear</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="Facturas">
+        <div class="NombreDatos">
+            <h4>Número de Factura</h4>
+            <h4>Fecha</h4>
+            <h4>Total</h4>
+        </div>
+        <div>
+            <div class="Datos">
+                <h4 class="NumFact">111111</h4>
+                <h4 class="FechaFact">19/9/24</h4>
+                <h4 class="TotalFact">100000</h4>
+            </div>
+        </div>
+    </section>
+
+    <!--Script User Desplegable-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userButton = document.getElementById('User');
+            const user = document.getElementById('userDesplegable');
+            
+            userButton.addEventListener('click', function() {
+                user.style.display = user.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!userButton.contains(event.target) && !user.contains(event.target)) {
+                    user.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!--Script Menú Desplegable-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('Menu');
+            const menu = document.getElementById('menuDesplegable');
+        
+            menuButton.addEventListener('click', function() {
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+             });
+
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!--Script Crear Formulario-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const crearButton = document.getElementById('Crear');
+            const crearForm = document.getElementById('crearForm');
+
+            crearButton.addEventListener('click', function() {
+                crearForm.style.display = crearForm.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!crearButton.contains(event.target) && !crearForm.contains(event.target)) {
+                    crearForm.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
