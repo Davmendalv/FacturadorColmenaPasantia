@@ -40,7 +40,7 @@ header {
 }
 
 .logo-container img {
-    width: 200px;
+    width: 230px;
     height: auto;
 }
 
@@ -189,4 +189,70 @@ button img {
 
 .user-item:hover {
     background-color: #e5e5e5;
+}
+
+#DatosUser {
+    font-weight: bolder;
+}
+
+.menu-dropdown {
+    position: relative;
+}
+
+.menu-desplegable {
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    background-color: #19255b;
+    border-right: 1px solid #0f1635;
+    width: 250px; 
+    height: 100vh; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 0; 
+    color: #ffffff;
+}
+
+.menu-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #19255b;
+    border-bottom: 1px solid #0a0a0a; 
+    color: #ffffff;
+}
+
+.menu-header img {
+    width: 45px;
+    height: auto;
+}
+
+.menu-header span {
+    font-family: 'Arimo';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.menu-item {
+    padding: 20px;
+    font-family: 'Arimo';
+    font-size: 16px;
+    color: #ffffff;
+    border-bottom: 1px solid #0a0a0a; 
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.menu-item:last-child {
+    border-bottom: 1px solid #0a0a0a; 
+}
+
+.menu-item:hover {
+    background-color: #253684;
+     
 }
