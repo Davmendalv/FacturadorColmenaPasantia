@@ -13,14 +13,27 @@
 <body>
     <header>
         <nav class="header-nav">
-            <a href=""><button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button></a>
+
+            <div class="menu-dropdown">
+                <button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button>
+                <div id="menuDesplegable" class="menu-desplegable">
+                    <div class="menu-header">
+                        <img src="img/botónmenu.png" alt="Icono Menu">
+                        <span>Menú</span>
+                    </div>
+                    <div class="menu-item">
+                        <a href="indexmenu.html">Lista de Facturas Electronicas</a>
+                    </div>
+                </div>
+            </div>
             
             <div class="logo-container">
-                <a href=""><img src="img/LogoHorizontal-SA blanco.png" alt="Logo"></a>
+                <img src="img/LogoHorizontal-SA blanco.png" alt="Logo">
             </div>
             
             <div class="botones-derecha">
-                <a href=""><button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button></a>
+                <button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button>
+                
                 <div class="user-dropdown">
                     <button id="User"><img src="img/botonuser.png" alt="Usuario"></button>
                     <div id="userDesplegable" class="user-desplegable">
@@ -29,7 +42,7 @@
                             <span>Nombre de Usuario</span>
                         </div>
                         <div class="user-item">
-                            <a href="indexdatos.html">Datos del Usuario</a>
+                            <a id="DatosUser" href="indexdatos.html">Datos del Usuario</a>
                         </div>
                         <div class="user-item">
                             <a href="indexlogin.html">Cerrar sesión</a>
@@ -53,7 +66,8 @@
         <p class="Guardar"><a href="#">Guardar Cambios</a></p>
     </section>
 
-    <script>
+     <!--Script User Desplegable-->
+     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const userButton = document.getElementById('User');
             const user = document.getElementById('userDesplegable');
@@ -65,6 +79,24 @@
             document.addEventListener('click', function(event) {
                 if (!userButton.contains(event.target) && !user.contains(event.target)) {
                     user.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!--Script Menú Desplegable-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('Menu');
+            const menu = document.getElementById('menuDesplegable');
+        
+            menuButton.addEventListener('click', function() {
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+             });
+
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = 'none';
                 }
             });
         });
