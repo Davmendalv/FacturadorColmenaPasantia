@@ -13,10 +13,10 @@
     <header>
         <nav class="header-nav">
             <div class="menu-dropdown">
-                <button id="Menu"><img src="img/botónmenu.png" alt="Menú"></button>
+                <button id="Menu"><img src="img/botónmenu (2).png" alt="Menú"></button>
                 <div id="menuDesplegable" class="menu-desplegable">
                     <div class="menu-header">
-                        <img src="img/botónmenu.png" alt="Icono Menu">
+                        <img src="img/botónmenu (2).png" alt="Icono Menu">
                         <span>Menú</span>
                     </div>
                     <div class="menu-item">
