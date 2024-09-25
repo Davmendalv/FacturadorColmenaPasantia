@@ -1,14 +1,14 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
     <link rel="shortcut icon" href="img/colmenacr_logo-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleslogin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -23,7 +23,7 @@ DOCTYPE html>
     <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese su Usuario">
     <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
     <p><a href="#">Terminos y Condiciones</a></p>
-    <p class="botons-link"><a href="#">Registrar </a></p>
+    <p class="botons-link"><a href="indexmenu.html">Registrar </a></p>
     <p><a href="#">¿Olvidaste tu contraseña? </a></p>
 </section>
 
