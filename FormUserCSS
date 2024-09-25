@@ -106,7 +106,12 @@ button img {
     height: 46px;
     text-align: center;
     margin-left: 30px;
+    font-size: 20px;
+    font-family: 'Arimo';
+    text-align: left;
 }
+
+
 
 .Guardar {
     background: #fcbf00;
