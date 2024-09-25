@@ -53,7 +53,7 @@ header .logo img {
     background: #ffffff;
     padding: 30px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 70px;
     border-radius: 25px;
    /* border: 3.5px solid #19255b;*/
     border: 3.5px solid #fcbf00;
