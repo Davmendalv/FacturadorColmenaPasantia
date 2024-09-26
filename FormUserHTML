@@ -13,7 +13,6 @@
 <body>
     <header>
         <nav class="header-nav">
-
             <div class="menu-dropdown">
                 <button id="Menu"><img src="img/botónmenu (2).png" alt="Menú"></button>
                 <div id="menuDesplegable" class="menu-desplegable">
@@ -57,17 +56,25 @@
         <h1>Formulario de Datos del Usuario</h1>
         <h3>Nombre del Usuario</h3>
         <input class="controls" type="text" name="nombre" id="nombre" placeholder="">
+        <p class="mensaje-error" id="nombreError" style="display:none;">Por favor, ingresa un nombre de usuario.</p>
+
         <h3>Correo Electrónico</h3>
-        <input class="controls" type="text" name="correo" id="correo" placeholder="">
+        <input class="controls" type="email" name="correo" id="correo" placeholder="" required>
+        <p class="mensaje-error" id="correoError" style="display:none;">Por favor, ingresa un correo electrónico válido.</p>
+
         <h3>Número de teléfono</h3>
-        <input class="controls" type="text" name="telefono" id="telefono" placeholder="">
+        <input class="controls" type="tel" name="telefono" id="telefono" placeholder="" pattern="[0-9]{8}" required>
+        <p class="mensaje-error" id="telefonoError" style="display:none;">Por favor, ingresa un número de teléfono válido (8 dígitos).</p>
+
         <h3>Nombre de la Organización</h3>
         <input class="controls" type="text" name="nombreorg" id="nombreorg" placeholder="">
-        <p class="Guardar"><a href="#">Guardar Cambios</a></p>
+        <p class="mensaje-error" id="nombreOrgError" style="display:none;">Por favor, ingresa el nombre de la organización.</p>
+
+        <p class="Guardar"><a href="#" id="guardarCambios">Guardar Cambios</a></p>
     </section>
 
-     <!--Script User Desplegable-->
-     <script>
+    <!--Script User Desplegable-->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const userButton = document.getElementById('User');
             const user = document.getElementById('userDesplegable');
@@ -92,13 +99,61 @@
         
             menuButton.addEventListener('click', function() {
                 menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-             });
+            });
 
             document.addEventListener('click', function(event) {
                 if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
                     menu.style.display = 'none';
                 }
             });
+        });
+    </script>
+
+    <!--Validaciones del Formulario-->
+    <script>
+        document.getElementById('guardarCambios').addEventListener('click', function(e) {
+            e.preventDefault();
+            const nombreInput = document.getElementById('nombre');
+            const nombreOrgInput = document.getElementById('nombreorg');
+            const correoInput = document.getElementById('correo');
+            const telefonoInput = document.getElementById('telefono');
+            let valid = true;
+
+            // Validar nombre de usuario
+            if (nombreInput.value.trim() === "") {
+                document.getElementById('nombreError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('nombreError').style.display = 'none';
+            }
+
+            // Validar nombre de la organización
+            if (nombreOrgInput.value.trim() === "") {
+                document.getElementById('nombreOrgError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('nombreOrgError').style.display = 'none';
+            }
+
+            // Validar correo
+            if (!correoInput.validity.valid) {
+                document.getElementById('correoError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('correoError').style.display = 'none';
+            }
+
+            // Validar teléfono
+            if (!telefonoInput.validity.valid) {
+                document.getElementById('telefonoError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('telefonoError').style.display = 'none';
+            }
+
+            if (valid) {
+                alert('Cambios guardados correctamente!');
+            }
         });
     </script>
 </body>
