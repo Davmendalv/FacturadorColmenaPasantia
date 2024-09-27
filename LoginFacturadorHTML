@@ -28,12 +28,12 @@
 </section>
 
  
-
+<!--Script Dark Mode-->
 <script>
     const toggleButton = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
-    // Verificar si el modo oscuro está almacenado en localStorage
+   
     if (localStorage.getItem('dark-mode') === 'enabled') {
         body.classList.add('dark-mode');
     }
@@ -41,7 +41,7 @@
     toggleButton.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
 
-        // Guardar el estado del modo oscuro en localStorage
+       
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('dark-mode', 'enabled');
         } else {
