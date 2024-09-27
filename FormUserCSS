@@ -75,15 +75,14 @@ button img {
 
 .RegistroDatos {
     width: 600px;
-    height: auto; /* Cambiar a auto para ajustar según el contenido */
+    height: auto; 
     background: #ffffff;
     padding: 20px;
     margin: auto;
     margin-top: 30px;
     font-family: 'Arimo';
-    border-radius: 10px; /* Agregado para redondear las esquinas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
-}
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 
 .RegistroDatos h1 {
     color: black;
