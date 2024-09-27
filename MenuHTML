@@ -80,7 +80,7 @@
             <h4>Fecha</h4>
             <h4>Total</h4>
         </div>
-        <div id="facturas"></div> <!-- Contenedor para las facturas creadas -->
+        <div id="facturas"></div> 
     </section>
 
     <!--Script User Desplegable-->
@@ -209,7 +209,7 @@
                     document.getElementById("facturas").appendChild(facturaDiv);
                     document.getElementById("facturas").appendChild(divider);
                     
-                    // Limpia los campos del formulario
+                    
                     inputs.forEach(input => input.value = "");
                     for (const key in mensajes) {
                         mensajes[key].textContent = "";
@@ -217,16 +217,16 @@
                 }
             });
 
-            // Funcionalidad para el botón "Eliminar"
+            
             document.addEventListener('click', function(event) {
                 if (event.target.closest('.eliminar')) {
                     const facturaDiv = event.target.closest('.Datos');
-                    facturaDiv.nextElementSibling.remove(); // Remove the divider
-                    facturaDiv.remove(); // Remove the invoice
+                    facturaDiv.nextElementSibling.remove(); 
+                    facturaDiv.remove();
                 }
             });
 
-            // Funcionalidad para el botón "Editar"
+            
             document.addEventListener('click', function(event) {
                 if (event.target.closest('.edit-button')) {
                     const facturaDiv = event.target.closest('.Datos');
@@ -234,15 +234,15 @@
                     const fecha = facturaDiv.querySelector('.FechaFact').textContent;
                     const total = facturaDiv.querySelector('.TotalFact').textContent;
 
-                    // Redirigir al formulario de creación
-                    crearForm.style.display = 'block'; // Show the create form
+                    
+                    crearForm.style.display = 'block'; 
                     document.getElementById("numfactform").value = numfactura;
                     document.getElementById("fechafactform").value = fecha;
                     document.getElementById("totalfactform").value = total;
 
-                    // Eliminar la factura actual
-                    facturaDiv.nextElementSibling.remove(); // Remove the divider
-                    facturaDiv.remove(); // Remove the invoice
+                    
+                    facturaDiv.nextElementSibling.remove(); 
+                    facturaDiv.remove(); 
                 }
             });
         });
