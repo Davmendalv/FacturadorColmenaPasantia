@@ -1,268 +1,160 @@
-.arimo-custom {
-    font-family: "Arimo", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500; 
-    font-style: normal;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Usuario</title>
+    <link rel="shortcut icon" href="img/colmenacr_logo-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="stylesdatos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <div class="menu-dropdown">
+                <button id="Menu"><img src="img/botónmenu (2).png" alt="Menú"></button>
+                <div id="menuDesplegable" class="menu-desplegable">
+                    <div class="menu-header">
+                        <img src="img/botónmenu (2).png" alt="Icono Menu">
+                        <span>Menú</span>
+                    </div>
+                    <div class="menu-item">
+                        <a href="indexmenu.html">Lista de Facturas Electronicas</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="logo-container">
+                <img src="img/LogoHorizontal-SA blanco.png" alt="Logo">
+            </div>
+            
+            <div class="botones-derecha">
+                <button id="Noti"><img src="img/botonnotis.png" alt="Notificaciones"></button>
+                
+                <div class="user-dropdown">
+                    <button id="User"><img src="img/botonuser.png" alt="Usuario"></button>
+                    <div id="userDesplegable" class="user-desplegable">
+                        <div class="user-header">
+                            <img src="img/botonuser.png" alt="Icono Usuario">
+                            <span>Nombre de Usuario</span>
+                        </div>
+                        <div class="user-item">
+                            <a id="DatosUser" href="indexdatos.html">Datos del Usuario</a>
+                        </div>
+                        <div class="user-item">
+                            <a href="indexlogin.html">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <section class="RegistroDatos">
+        <h1>Formulario de Datos del Usuario</h1>
+        <h3>Nombre del Usuario</h3>
+        <input class="controls" type="text" name="nombre" id="nombre" placeholder="">
+        <p class="mensaje-error" id="nombreError" style="display:none;">Por favor, ingresa un nombre de usuario.</p>
 
-header {
-    background-color: #19255b;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100px;
-}
+        <h3>Correo Electrónico</h3>
+        <input class="controls" type="email" name="correo" id="correo" placeholder="" required>
+        <p class="mensaje-error" id="correoError" style="display:none;">Por favor, ingresa un correo electrónico válido.</p>
 
-.header-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-}
+        <h3>Número de teléfono</h3>
+        <input class="controls" type="tel" name="telefono" id="telefono" placeholder="" pattern="[0-9]{8}" required>
+        <p class="mensaje-error" id="telefonoError" style="display:none;">Por favor, ingresa un número de teléfono válido (8 dígitos).</p>
 
-#UserMenu {
-    background: none;
-    border: none;
-}
+        <h3>Nombre de la Organización</h3>
+        <input class="controls" type="text" name="nombreorg" id="nombreorg" placeholder="">
+        <p class="mensaje-error" id="nombreOrgError" style="display:none;">Por favor, ingresa el nombre de la organización.</p>
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    position: relative;
-}
+        <p class="Guardar"><a href="#" id="guardarCambios">Guardar Cambios</a></p>
+    </section>
 
-.logo-container img {
-    width: 230px;
-    height: auto;
-}
+    <!--Script User Desplegable-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userButton = document.getElementById('User');
+            const user = document.getElementById('userDesplegable');
+            
+            userButton.addEventListener('click', function() {
+                user.style.display = user.style.display === 'block' ? 'none' : 'block';
+            });
 
-.botones-derecha {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
+            document.addEventListener('click', function(event) {
+                if (!userButton.contains(event.target) && !user.contains(event.target)) {
+                    user.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
-#Noti:hover {
-    transform: scale(1.1);
-}
+    <!--Script Menú Desplegable-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('Menu');
+            const menu = document.getElementById('menuDesplegable');
+        
+            menuButton.addEventListener('click', function() {
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            });
 
-#User:hover {
-    transform: scale(1.1); 
-}
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
-#UserMenu:hover {
-    transform: scale(1.1);  
-}
+    <!--Validaciones del Formulario-->
+    <script>
+        document.getElementById('guardarCambios').addEventListener('click', function(e) {
+            e.preventDefault();
+            const nombreInput = document.getElementById('nombre');
+            const nombreOrgInput = document.getElementById('nombreorg');
+            const correoInput = document.getElementById('correo');
+            const telefonoInput = document.getElementById('telefono');
+            let valid = true;
 
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+            
+            if (nombreInput.value.trim() === "") {
+                document.getElementById('nombreError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('nombreError').style.display = 'none';
+            }
 
-button img {
-    width: 60px;
-    height: auto;
-}
+           
+            if (nombreOrgInput.value.trim() === "") {
+                document.getElementById('nombreOrgError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('nombreOrgError').style.display = 'none';
+            }
 
-.RegistroDatos {
-    width: 600px;
-    height: auto; /* Cambiar a auto para ajustar según el contenido */
-    background: #ffffff;
-    padding: 20px;
-    margin: auto;
-    margin-top: 30px;
-    font-family: 'Arimo';
-    border-radius: 10px; /* Agregado para redondear las esquinas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
-}
+           
+            if (!correoInput.validity.valid) {
+                document.getElementById('correoError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('correoError').style.display = 'none';
+            }
 
-.RegistroDatos h1 {
-    color: black;
-    font-weight: bold;
-    font-size: 31px;
-    text-align: center;
-}
+           
+            if (!telefonoInput.validity.valid) {
+                document.getElementById('telefonoError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('telefonoError').style.display = 'none';
+            }
 
-.RegistroDatos h3 {
-    font-weight: lighter;
-    font-size: 26px;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    justify-content: center;
-    margin-left: 30px;
-}
-
-.controls {
-    background: #f2f2f2f2;
-    border: 0.5px solid #fcbf00;
-    width: 480px;
-    height: 46px;
-    text-align: center;
-    margin-left: 30px;
-    font-size: 20px;
-    font-family: 'Arimo';
-    text-align: left;
-}
-
-.mensaje-error {
-    color: red; 
-    font-size: 18px; 
-    margin-left: 30px;
-}
-
-.Guardar {
-    background: #fcbf00;
-    width: 280px;
-    height: 60px;
-    text-align: center;
-    border-radius: 80px;
-    margin-top: 40px;
-    margin-left: 130px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-}
-
-.Guardar a {
-    text-decoration: none;
-    color: black;
-    font-size: 23px;
-    font-weight: lighter;
-    text-align: center;
-}
-
-.Guardar:hover {
-    transform: scale(1.1);  
-}
-
-.user-dropdown {
-    position: relative;
-}
-
-.user-desplegable {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    border-radius: 8px;
-}
-
-.user-header {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #dcdcdc;
-    border-bottom: 1px solid #ccc;
-}
-
-.user-header img {
-    width: 50px;
-    height: auto;
-}
-
-.user-header span {
-    font-family: 'Arimo';
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.user-item {
-    padding: 20px;
-    text-align: left;
-    font-family: 'Arimo';
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-}
-
-.user-item a {
-    text-decoration: none;
-    color: #19255b;
-}
-
-.user-item:last-child {
-    border-bottom: none;
-}
-
-.user-item:hover {
-    background-color: #e5e5e5;
-}
-
-#DatosUser {
-    font-weight: bolder;
-}
-
-.menu-dropdown {
-    position: relative;
-}
-
-.menu-desplegable {
-    display: none;
-    position: fixed; 
-    top: 0;
-    left: 0; 
-    background-color: #19255b;
-    border-right: 1px solid #0f1635;
-    width: 250px; 
-    height: 100vh; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    border-radius: 0; 
-    color: #ffffff;
-}
-
-.menu-header {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #19255b;
-    border-bottom: 1px solid #0a0a0a; 
-    color: #ffffff;
-}
-
-.menu-header img {
-    width: 45px;
-    height: auto;
-}
-
-.menu-header span {
-    font-family: 'Arimo';
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.menu-item {
-    padding: 20px;
-    font-family: 'Arimo';
-    font-size: 16px;
-    color: #ffffff;
-    border-bottom: 1px solid #0a0a0a; 
-}
-
-.menu-item a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.menu-item:last-child {
-    border-bottom: 1px solid #0a0a0a; 
-}
-
-.menu-item:hover {
-    background-color: #253684;
-}
+            if (valid) {
+                alert('Cambios guardados correctamente!');
+            }
+        });
+    </script>
+</body>
+</html>
