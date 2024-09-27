@@ -75,12 +75,14 @@ button img {
 
 .RegistroDatos {
     width: 600px;
-    height: 700px;
+    height: auto; /* Cambiar a auto para ajustar según el contenido */
     background: #ffffff;
     padding: 20px;
     margin: auto;
     margin-top: 30px;
     font-family: 'Arimo';
+    border-radius: 10px; /* Agregado para redondear las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
 }
 
 .RegistroDatos h1 {
@@ -111,7 +113,11 @@ button img {
     text-align: left;
 }
 
-
+.mensaje-error {
+    color: red; 
+    font-size: 18px; 
+    margin-left: 30px;
+}
 
 .Guardar {
     background: #fcbf00;
@@ -259,5 +265,4 @@ button img {
 
 .menu-item:hover {
     background-color: #253684;
-     
 }
